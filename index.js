@@ -19,13 +19,15 @@ const feeds = [
     title: 'Jurassic Park',
     author: 'Michael Crichton',
     points: 3,
-    website: 'web.com'
+    website: 'web.com',
+    url: 'test.io'
   },
   {
     title: 'Dinamic Test',
     author: 'Anything',
     points: 6,
-    website: 'display.com'
+    website: 'display.com',
+    url: 'checktest.io'
   }
 ];
 
@@ -45,6 +47,7 @@ const typeDefs = gql`
     author: String
     points: Int
     website: String
+    url: String
   }
 
   # The "Query" type is the root of all GraphQL queries.
@@ -64,6 +67,7 @@ const typeDefs = gql`
       author: String
       points: Int
       website: String
+      url: String
     ): Feed
   }
 `;
@@ -91,6 +95,7 @@ const resolvers = {
           author: args.author,
           points: args.points,
           website: args.website,
+          url: args.url,
        }
        feeds.push(feed);
        return feed
